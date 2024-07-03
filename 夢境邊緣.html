@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夢境邊緣 The Edge of Reality</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Times New Roman, sans-serif;
+            background: url('img6-1.jpg') no-repeat center center fixed; 
+            background-size: cover;
+        }
+		  .page { 
+			  display: none;
+		}
+       
+        .hidden {
+            display: none;
+        }
+		
+        #homePage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('img1.png') no-repeat center center/cover; 
+        }
+        .draggable {
+            position: absolute;
+            cursor: move;
+        }
+        .title, .subtitle {
+            position: absolute;
+            text-align: center;
+            color: #00aaff;
+            cursor: pointer;
+        }
+        .title {
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+        }
+        .subtitle {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+        #mainPage {
+            display: none;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #00aaff;
+            cursor: pointer;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover, nav a.active {
+            color: #00aaff;
+            font-weight: bolder;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile {
+            text-align: left;
+			font-size: 20px;
+			color: aqua;
+        }
+        .profile img {
+            width: 300px;
+        }
+        .info {
+            flex: 1;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            margin: 0 5px;
+            color: #00aaff;
+            text-decoration: none;
+        }
+		.visible { 
+            display: block !important;
+        }
+    </style>
+	
+</head>
+<body>
+    
+    <div id="homePage">
+        <h1 class="title" onclick="showMainPage()">夢境邊緣</h1>
+        <h2 class="subtitle" onclick="showMainPage()">The Edge of Reality</h2>
+        
+        <img src="素材2-1.png" class="draggable" style="top: 10%; left: 10%;" alt="Element 1"> 
+        <img src="素材2-2.png" class="draggable" style="top: 50%; left: 20%;" alt="Element 2">
+		<img src="素材2-3.png" class="draggable" style="top: 60%; left: 40%;" alt="Element 2">
+		<img src="素材2-4.png" class="draggable" style="top: 30%; left: 70%;" alt="Element 2">
+		<img src="素材2-6.png" class="draggable" style="top: 50%; left: 80%;" alt="Element 2">
+    </div>
+
+    
+	<!-- 正式網頁 -->	
+    <div id="mainPage" class="hidden">
+        <header>
+            <h1 onclick="showHomePage()">夢境邊緣 The Edge of Reality</h1>
+            <nav>
+                <a href="#about" class="nav-link" onclick="showPage('dream-end-page')">夢的盡頭</a>
+                <a href="#education" class="nav-link" onclick="showPage('god-view-page')">上帝視角</a>
+                <a href="#experience" class="nav-link" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+				<a href="#experience" class="nav-link" onclick="showPage('no-light-page')">無光之地</a>
+				<a href="#experience" class="nav-link" onclick="showPage('no-light-page')">蓋上一層柔軟</a>
+				<a href="#experience" class="nav-link" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+            </nav>
+            <input type="text" placeholder="搜尋...">
+        </header>
+        <div class="content">
+            <div class="profile">
+				<p>夢的盡頭</p>
+				<p>The end of the dream</p>
+				<p>About me</p>
+                <img src="個人照片.jpg" alt="Profile Picture"> 
+                <p>楊芸熙</p>
+                <p>2004/01/07</p>
+                <p>Taipei, Taiwan</p>
+            </div>
+            <div class="info">
+                <h2 id="about">About me</h2>
+                <p>喜歡看電影、影集，最喜歡的歌是《Running up that hill》。</p>
+				<p>心思細膩，個性溫和，處理事情有耐心，在團隊工作中配合度高且負責任。</p>
+                <h2 id="education">Educational</h2>
+                <p>內壢高中美術班</p><p>輔仁大學應用美術系視覺傳達組</p>
+                <h2 id="experience">Experience</h2>
+                <p>高中擔任美術社副社長，負責相關文宣的製作。</p>
+				<p>幫忙設計高中美術班畢業畫冊，與廠商溝通，以及設計校內活動LOGO。</p>
+				<p>目前在補教業做美編的工作。</p>
+            </div>
+		
+		<img src="素材2-4.png" class="draggable" style="top: 30%; left: 70%;" alt="Element 2">
+		<img src="素材2-6.png" class="draggable" style="top: 50%; left: 80%;" alt="Element 2">
+    </div>
+        <footer>
+            <p>YunXiii © 2024 Website. The Edge of Reality.</p>
+            <a href="https://www.facebook.com/melody.yang.967/" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/yun_xiiiiiiiiiiiiiiiii?fbclid=IwZXh0bgNhZW0CMTAAAR31NPQ_wUwGkQTH1ArooWw17TJ5-UqmWHbeErDLEWkvAJ4MnEUhGTZNZPI_aem_yd8CGScVURB2VavLFZuKfg" target="_blank">Instagram</a>
+        </footer>
+    </div>
+	
+	<div id="dream-end-page" class="page">
+    <div class="header">
+        <h1>夢境邊緣 The Edge of Reality</h1>
+    </div>
+    <div class="nav">
+        <a href="#" onclick="showPage('dream-end-page')">夢的盡頭</a>
+        <a href="#" onclick="showPage('god-view-page')">上帝視角</a>
+        <a href="#" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+        <a href="#" onclick="showPage('no-light-page')">無光之地</a>
+        <a href="#" onclick="showPage('soft-page')">蓋上一層柔軟</a>
+		<a href="#" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h2>夢的盡頭</h2>
+            <p>About me</p>
+        </div>
+        <div class="main-content">
+            <img src="file-SSj6Ar9qxyqqijFxsMqbf2Kt" alt="project image" style="width:100%">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2024 Website. All rights reserved.
+    </div>
+</div>
+
+<div id="god-view-page" class="page">
+    <div class="header">
+        <h1>夢境邊緣 The Edge of Reality</h1>
+    </div>
+    <div class="nav">
+        <a href="#" onclick="showPage('dream-end-page')">夢的盡頭</a>
+        <a href="#" onclick="showPage('god-view-page')">上帝視角</a>
+        <a href="#" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+        <a href="#" onclick="showPage('no-light-page')">無光之地</a>
+        <a href="#" onclick="showPage('soft-page')">蓋上一層柔軟</a>
+		<a href="#" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h2>上帝視角</h2>
+            <p>社會宣言-女性生育自主權</p>
+        </div>
+        <div class="main-content">
+            <img src="女性自主權_披頭四_page-0001.jpg" alt="project image" style="width:50%">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2024 Website. All rights reserved.
+    </div>
+</div>
+
+<div id="dream-in-dream-page" class="page">
+    <div class="header">
+        <h1>夢境邊緣 The Edge of Reality</h1>
+    </div>
+    <div class="nav">
+        <a href="#" onclick="showPage('dream-end-page')">夢的盡頭</a>
+        <a href="#" onclick="showPage('god-view-page')">上帝視角</a>
+        <a href="#" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+        <a href="#" onclick="showPage('no-light-page')">無光之地</a>
+        <a href="#" onclick="showPage('soft-page')">蓋上一層柔軟</a>
+		<a href="#" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h2>夢中夢</h2>
+            <p>Cage The Elephant專輯設計</p>
+        </div>
+        <div class="main-content">
+            <img src="專輯設計-外層(封面封底中間.png" alt="project image" style="width:100%">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2024 Website. All rights reserved.
+    </div>
+</div>
+
+<div id="no-light-page" class="page">
+    <div class="header">
+        <h1>夢境邊緣 The Edge of Reality</h1>
+    </div>
+    <div class="nav">
+        <a href="#" onclick="showPage('dream-end-page')">夢的盡頭</a>
+        <a href="#" onclick="showPage('god-view-page')">上帝視角</a>
+        <a href="#" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+        <a href="#" onclick="showPage('no-light-page')">無光之地</a>
+        <a href="#" onclick="showPage('soft-page')">蓋上一層柔軟</a>
+		<a href="#" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h2>無光之地</h2>
+            <p>怪怪怪夢</p>
+        </div>
+        <div class="main-content">
+            <img src="LINE_ALBUM_ppt_220909_0.jpg" alt="project image" style="width:70%">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2024 Website. All rights reserved.
+    </div>
+</div>
+
+<div id="soft-page" class="page">
+    <div class="header">
+        <h1>夢境邊緣 The Edge of Reality</h1>
+    </div>
+    <div class="nav">
+        <a href="#" onclick="showPage('dream-end-page')">夢的盡頭</a>
+        <a href="#" onclick="showPage('god-view-page')">上帝視角</a>
+        <a href="#" onclick="showPage('dream-in-dream-page')">夢中夢</a>
+        <a href="#" onclick="showPage('no-light-page')">無光之地</a>
+        <a href="#" onclick="showPage('soft-page')">蓋上一層柔軟</a>
+		<a href="#" onclick="showPage('Real-Surreal-page')">虛實之間</a>
+		
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h2>蓋上一層柔軟</h2>
+            <p>石膏_鳥和貓</p>
+        </div>
+        <div class="main-content">
+            <img src="S__36216839.png" alt="project image" style="width:100%">
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © 2024 Website. All rights reserved.
+    </div>
+</div>
+
+    <script>
+        function showMainPage() {
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        }
+
+        function showHomePage() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('homePage').style.display = 'block';
+        }
+
+        // 導航鏈接
+        function setActive(element) {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // 拖曳
+        document.querySelectorAll('.draggable').forEach(element => {
+            dragElement(element);
+        });
+
+        function dragElement(element) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            element.onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('visible');
+            });
+            document.getElementById(pageId).classList.add('visible');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('main-page'); 
+        });
+    </script>
+</body>
+</html>
